@@ -319,8 +319,8 @@ module Readability
       node.css("h1, h2, h3, h4, h5, h6").each do |header|
         header.remove if class_weight(header) < 0 || get_link_density(header) > 0.33
       end
-
-      node.css("form, object, iframe, embed").each do |elem|
+      
+      node.css("form, object, embed").each do |elem|
         elem.remove
       end
 
