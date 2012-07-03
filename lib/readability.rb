@@ -72,7 +72,7 @@ module Readability
 
         elements.each do |element|
           next unless element["src"]
-          url     = element["src"].value
+          url     = URI.escape(element["src"].value)
           height  = element["height"].nil?  ? 0 : element["height"].value.to_i
           width   = element["width"].nil?   ? 0 : element["width"].value.to_i
           format  = File.extname(url).gsub(".", "")
